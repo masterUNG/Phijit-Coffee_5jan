@@ -6,15 +6,6 @@
     tools:context="nsru.demsomboon.ratchasak.phijitcoffee.OrderActivity"
     android:background="@android:color/holo_green_light">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/readorder"
-        android:id="@+id/button7"
-        android:layout_alignParentBottom="true"
-        android:textColor="@color/text"
-        android:onClick="clickReadOrder" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -80,4 +71,15 @@
         android:textColor="@color/text"
         android:layout_above="@+id/ragHr"
         android:layout_marginLeft="15dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/readorder"
+        android:id="@+id/button7"
+        android:textColor="@color/text"
+        android:onClick="clickReadOrder"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

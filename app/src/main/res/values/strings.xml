@@ -38,6 +38,7 @@
     <string name="price">ราคา</string>
     <string name="addMore">เพิ่มรายการ</string>
     <string name="confirm">ยืนยัน รายการ</string>
+    <string name="touch">แตะเพื่อลบ รายการ</string>
 
 
 </resources>

@@ -54,7 +54,8 @@
         android:layout_marginTop="15dp"
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/textView17"
-        android:layout_alignEnd="@+id/textView17">
+        android:layout_alignEnd="@+id/textView17"
+        android:layout_above="@+id/linbottomConfirm">
 
         <TextView
             android:layout_width="wrap_content"
@@ -157,6 +158,16 @@
         <ListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:id="@+id/listView2" />
     </LinearLayout>
+
+    <TextView
+        android:text="@string/touch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView43"
+        android:layout_above="@+id/linbottomConfirm"
+        android:textSize="18sp"
+        android:layout_marginLeft="20dp" />
 </RelativeLayout>
