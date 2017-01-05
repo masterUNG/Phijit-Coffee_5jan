@@ -31,6 +31,10 @@
     <string name="vol">จำนวน</string>
     <string name="sta">รับ</string>
     <string name="back">ย้อนกลับ</string>
+    <string name="hr1">1 ชั่วโมง</string>
+    <string name="hr2">2 ชั่วโมง</string>
+    <string name="hr3">3 ชั่วโมง</string>
+    <string name="hr4">4 ชั่วโมง</string>
 
 
 </resources>

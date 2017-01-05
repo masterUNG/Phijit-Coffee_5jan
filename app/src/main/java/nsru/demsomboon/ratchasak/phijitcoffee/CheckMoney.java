@@ -100,6 +100,7 @@ public class CheckMoney extends AppCompatActivity {
 
 
     public void clickOrderCheckMoney(View view) {
+
         Intent intent = new Intent(CheckMoney.this, OrderActivity.class);
         intent.putExtra("Status", true);
         intent.putExtra("Money", moneyString);
