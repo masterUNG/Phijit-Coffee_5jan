@@ -26,5 +26,10 @@
     <string name="money">จำนวนเงิน</string>
     <string name="thb">บาท</string>
 
+    <string name="date">วันที่</string>
+    <string name="coffee">รายการ</string>
+    <string name="vol">จำนวน</string>
+    <string name="sta">รับ</string>
+
 
 </resources>

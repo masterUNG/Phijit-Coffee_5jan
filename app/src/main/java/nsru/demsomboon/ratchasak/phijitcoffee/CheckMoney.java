@@ -1,9 +1,8 @@
 package nsru.demsomboon.ratchasak.phijitcoffee;
 
 import android.content.Intent;
-import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -26,6 +25,7 @@ public class CheckMoney extends AppCompatActivity {
     private TextView moneyTextView, nameTextView;
     private String moneyString, nameString, surnameString, addressString, idLoginString, jsonString;
     private static final String urlPHP = "http://www.swiftcodingthai.com/aon/get_user_where.php";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +44,7 @@ public class CheckMoney extends AppCompatActivity {
 
     public void clickListCheckOrder(View view) {
         Intent intent = new Intent(CheckMoney.this, ShowListOrder.class);
-        intent.putExtra("Name", nameString+ " " +surnameString);
+        intent.putExtra("Name", nameString + " " + surnameString);
         startActivity(intent);
     }
 
@@ -88,7 +88,7 @@ public class CheckMoney extends AppCompatActivity {
                     moneyTextView.setText(moneyString);
                     nameTextView.setText(nameString + " " + surnameString);
 
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
 
@@ -107,8 +107,6 @@ public class CheckMoney extends AppCompatActivity {
         intent.putExtra("Surname", surnameString);
         intent.putExtra("Address", addressString);
         intent.putExtra("idLogin", idLoginString);
-
-
 
 
         startActivity(intent);
