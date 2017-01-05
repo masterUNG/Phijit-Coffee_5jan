@@ -16,7 +16,7 @@
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Add More"
+            android:text="@string/addMore"
             android:id="@+id/button8"
             android:layout_weight="1"
             android:textColor="@color/text"
@@ -25,7 +25,7 @@
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Confirm Order"
+            android:text="@string/confirm"
             android:id="@+id/button9"
             android:layout_weight="1"
             android:textColor="@color/text"
@@ -49,10 +49,12 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/textView17"
-        android:layout_margin="15dp"
         android:padding="15dp"
-        android:background="#96ffffff">
+        android:background="#96ffffff"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/textView17"
+        android:layout_alignEnd="@+id/textView17">
 
         <TextView
             android:layout_width="wrap_content"
@@ -124,7 +126,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Coffee"
+                android:text="@string/coffee"
                 android:id="@+id/textView24"
                 android:textSize="@dimen/h2"
                 android:textStyle="italic"
@@ -134,7 +136,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Price"
+                android:text="@string/price"
                 android:id="@+id/textView25"
                 android:textSize="@dimen/h2"
                 android:textStyle="italic"
@@ -144,7 +146,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Amount"
+                android:text="@string/vol"
                 android:id="@+id/textView26"
                 android:textSize="@dimen/h2"
                 android:textStyle="italic"

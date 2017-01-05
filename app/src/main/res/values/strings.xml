@@ -35,6 +35,9 @@
     <string name="hr2">2 ชั่วโมง</string>
     <string name="hr3">3 ชั่วโมง</string>
     <string name="hr4">4 ชั่วโมง</string>
+    <string name="price">ราคา</string>
+    <string name="addMore">เพิ่มรายการ</string>
+    <string name="confirm">ยืนยัน รายการ</string>
 
 
 </resources>
