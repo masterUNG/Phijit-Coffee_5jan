@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="clickBackShowListOrder"
-        android:text="Back"
+        android:text="@string/back"
         android:id="@+id/button12"
         android:layout_alignParentBottom="true"
         android:textColor="@color/text" />

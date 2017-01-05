@@ -30,6 +30,7 @@
     <string name="coffee">รายการ</string>
     <string name="vol">จำนวน</string>
     <string name="sta">รับ</string>
+    <string name="back">ย้อนกลับ</string>
 
 
 </resources>

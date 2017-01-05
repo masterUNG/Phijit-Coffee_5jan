@@ -2,8 +2,8 @@ package nsru.demsomboon.ratchasak.phijitcoffee;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
@@ -19,9 +19,10 @@ import org.json.JSONObject;
 
 public class ShowListOrder extends AppCompatActivity {
     //Explict
-    private  String nameLoginString;
-    private static final String url="http://swiftcodingthai.com/aon/get_order_where_name.php";
+    private String nameLoginString;
+    private static final String url = "http://swiftcodingthai.com/aon/get_order_where_name.php";
     private ListView listView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,13 +38,13 @@ public class ShowListOrder extends AppCompatActivity {
         synOrderTABLE.execute(url);
 
 
-
     }//mainmethod
 
     private class SynOrderTABLE extends AsyncTask<String, Void, String> {
         //Explicit
         private Context context;
-        private String[] dataStrings, coffeeStrings, amountStrings, statusStrings;
+        private String[] dataStrings, coffeeStrings,
+                amountStrings, statusStrings, thaiDateStrings;
 
         public SynOrderTABLE(Context context) {
             this.context = context;
@@ -69,7 +70,6 @@ public class ShowListOrder extends AppCompatActivity {
             }
 
 
-
         }//doInback
 
         @Override
@@ -80,18 +80,20 @@ public class ShowListOrder extends AppCompatActivity {
                 JSONArray jsonArray = new JSONArray(s);
                 dataStrings = new String[jsonArray.length()];
                 coffeeStrings = new String[jsonArray.length()];
-               amountStrings = new String[jsonArray.length()];
-                statusStrings= new String[jsonArray.length()];
+                amountStrings = new String[jsonArray.length()];
+                statusStrings = new String[jsonArray.length()];
+                thaiDateStrings = new String[jsonArray.length()];
 
-                for (int i=0;i<jsonArray.length();i++) {
+                for (int i = 0; i < jsonArray.length(); i++) {
 
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
                     dataStrings[i] = jsonObject.getString("Date");
                     coffeeStrings[i] = jsonObject.getString("Coffee");
                     amountStrings[i] = jsonObject.getString("Amount");
+                    thaiDateStrings[i] = myConvertThaiDate(dataStrings[i]);
 
                     String strStatus = jsonObject.getString("status");
-                    if (strStatus .length()==1) {
+                    if (strStatus.length() == 1) {
                         //Have Log
                         statusStrings[i] = getResources().getString(R.string.finish);
 
@@ -102,7 +104,7 @@ public class ShowListOrder extends AppCompatActivity {
 
                 }//for
                 ShowListOrderAdapter showListOrderAdapter = new ShowListOrderAdapter(context,
-                        dataStrings,coffeeStrings,amountStrings,statusStrings);
+                        thaiDateStrings, coffeeStrings, amountStrings, statusStrings);
                 listView.setAdapter(showListOrderAdapter);
 
             } catch (Exception e) {
@@ -110,13 +112,39 @@ public class ShowListOrder extends AppCompatActivity {
             }
 
 
-
-
         }//OnPost
 
+        private String myConvertThaiDate(String dataString) {
+
+            String tag = "5janV1", strResult = null;
+            String[] monthThai = new String[]{
+                    "ม.ค.", "ก.พ.", "มี.ค.",
+                    "เม.ย.", "พ.ค.", "มิ.ย.",
+                    "ก.ค.", "ส.ค.", "ก.ย.",
+                    "ต.ค.", "พ.ย.", "ธ.ค."};
+            Log.d(tag, "Date ==> " + dataString);
+
+            String[] strings = dataString.split("-");
+            for (int i = 0; i < strings.length; i++) {
+                Log.d(tag, "strings(" + i + ") ==> " + strings[i]);
+            }   //for
+
+            int intDate = Integer.parseInt(strings[0]);
+            int intMonth = Integer.parseInt(strings[1]);
+            int intYear = Integer.parseInt(strings[2]);
+
+            strResult = Integer.toString(intDate) +
+                    " " +
+                    monthThai[intMonth - 1] +
+                    " " + (Integer.toString(intYear + 543)).substring(2,4);
+
+
+            return strResult;
+        }
 
 
     }//SynOrderTABLE
+
     public void clickBackShowListOrder(View view) {
         finish();
     }
